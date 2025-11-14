@@ -1,0 +1,38 @@
+{
+  "groups": [
+    {
+      "name": "app",
+      "type": "com.budget.backend.config.AppConfig",
+      "sourceType": "com.budget.backend.config.AppConfig"
+    },
+    {
+      "name": "app.jwt",
+      "type": "com.budget.backend.config.JwtConfig",
+      "sourceType": "com.budget.backend.config.JwtConfig"
+    },
+    {
+      "name": "app.upload",
+      "type": "com.budget.backend.config.AppConfig$Upload",
+      "sourceType": "com.budget.backend.config.AppConfig",
+      "sourceMethod": "public com.budget.backend.config.AppConfig.Upload getUpload() "
+    }
+  ],
+  "properties": [
+    {
+      "name": "app.jwt.expiration",
+      "type": "java.lang.Long",
+      "sourceType": "com.budget.backend.config.JwtConfig"
+    },
+    {
+      "name": "app.jwt.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.budget.backend.config.JwtConfig"
+    },
+    {
+      "name": "app.upload.dir",
+      "type": "java.lang.String",
+      "sourceType": "com.budget.backend.config.AppConfig$Upload"
+    }
+  ],
+  "hints": []
+}
