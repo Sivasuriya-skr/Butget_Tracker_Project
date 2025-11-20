@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
+import ImportData from '../components/ImportData';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import api from '../service/api';
@@ -42,7 +43,6 @@ const Settings = () => {
         responseType: 'blob'
       });
 
-      // Create a blob from the response
       const blob = new Blob([response.data], { type: 'text/csv' });
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
@@ -59,6 +59,10 @@ const Settings = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleImportSuccess = () => {
+    toast.success('Data imported successfully! Navigate to Income or Expenses to see the changes.');
   };
 
   const handleDeleteAccount = async () => {
@@ -106,17 +110,20 @@ const Settings = () => {
           </div>
 
           <div className="settings-card">
-            <h4>Export Data</h4>
+            <h4>Data Management</h4>
             <p className="text-muted">
-              Download all your transactions (income and expenses) as a CSV file for backup or analysis.
+              Export your transactions to CSV or import transactions from a CSV/Excel file.
             </p>
-            <button
-              className="btn btn-primary"
-              onClick={handleExportData}
-              disabled={loading}
-            >
-              {loading ? 'Exporting...' : 'Export as CSV'}
-            </button>
+            <div className="data-buttons">
+              <button
+                className="btn btn-primary me-2"
+                onClick={handleExportData}
+                disabled={loading}
+              >
+                {loading ? 'Exporting...' : '📤 Export as CSV'}
+              </button>
+              <ImportData onImportSuccess={handleImportSuccess} />
+            </div>
           </div>
 
           <div className="settings-card danger-zone">
@@ -134,7 +141,6 @@ const Settings = () => {
         </div>
       </div>
 
-      {/* Delete Confirmation Modal */}
       {showDeleteModal && (
         <div className="modal-overlay" onClick={() => setShowDeleteModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>

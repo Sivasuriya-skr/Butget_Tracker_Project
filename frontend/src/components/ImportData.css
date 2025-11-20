@@ -1,0 +1,120 @@
+.import-modal {
+  max-width: 700px;
+}
+
+.import-instructions {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.import-instructions h6 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.import-instructions ol {
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+
+.import-instructions ol li {
+  margin-bottom: 5px;
+}
+
+.format-info {
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 15px 0;
+  border-left: 4px solid #667eea;
+}
+
+.format-info strong {
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.format-info ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.format-info ul li {
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.format-info ul li strong {
+  display: inline;
+  color: #667eea;
+}
+
+.file-upload-section {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.selected-file {
+  margin-top: 15px;
+  padding: 15px;
+  background: #e3f2fd;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.selected-file p {
+  margin: 5px 0;
+}
+
+.file-size {
+  font-size: 12px;
+  color: #666;
+}
+
+.import-result {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.import-result h6 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.error-list {
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.error-list ul {
+  margin: 10px 0 0 0;
+  padding-left: 20px;
+  font-size: 13px;
+}
+
+.error-list li {
+  margin-bottom: 5px;
+  color: #dc3545;
+}
+
+@media (max-width: 768px) {
+  .import-modal {
+    max-width: 95%;
+  }
+
+  .import-instructions ol,
+  .format-info ul {
+    padding-left: 15px;
+  }
+}

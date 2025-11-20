@@ -148,4 +148,14 @@
   .modal-footer {
     padding: 15px;
   }
+  .data-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.data-buttons .btn {
+  padding: 10px 25px;
+  font-weight: 500;
+}
 }
