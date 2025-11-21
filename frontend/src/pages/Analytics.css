@@ -1,0 +1,268 @@
+.analytics-container {
+  padding: 20px;
+}
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.analytics-header h2 {
+  margin: 0;
+  color: #333;
+  font-weight: 600;
+}
+
+.analytics-header .filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.analytics-header .form-select {
+  min-width: 150px;
+}
+
+/* Summary Cards */
+.summary-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.3s;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.summary-card .card-icon {
+  font-size: 40px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.income-card .card-icon {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+}
+
+.expense-card .card-icon {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+}
+
+.savings-card .card-icon {
+  background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+}
+
+.budget-card .card-icon {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+}
+
+.summary-card .card-content {
+  flex: 1;
+}
+
+.summary-card .card-content h6 {
+  margin: 0 0 5px 0;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.summary-card .card-content h4 {
+  margin: 0;
+  color: #333;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.budget-progress {
+  margin-top: 10px;
+}
+
+.budget-progress .progress {
+  height: 8px;
+  border-radius: 4px;
+  background-color: #e9ecef;
+  margin-bottom: 5px;
+}
+
+.budget-progress small {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Chart Cards */
+.chart-card {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.chart-card h5 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.chart-container {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.chart-container-large {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.budget-details {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e9ecef;
+  text-align: center;
+}
+
+.budget-details p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Modal Overrides for Analytics */
+.analytics-container .modal-content {
+  max-width: 500px;
+}
+
+.analytics-container .modal-body p {
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.analytics-container .form-control {
+  padding: 12px;
+  font-size: 16px;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.empty-state .icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.empty-state h5 {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  color: #999;
+  margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .chart-container {
+    height: 250px;
+  }
+
+  .chart-container-large {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .analytics-container {
+    padding: 10px;
+  }
+
+  .analytics-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .analytics-header .filters {
+    width: 100%;
+  }
+
+  .analytics-header .form-select {
+    flex: 1;
+    min-width: auto;
+  }
+
+  .summary-card {
+    padding: 15px;
+  }
+
+  .summary-card .card-icon {
+    font-size: 32px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .summary-card .card-content h4 {
+    font-size: 20px;
+  }
+
+  .chart-card {
+    padding: 15px;
+  }
+
+  .chart-container {
+    height: 200px;
+  }
+
+  .chart-container-large {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .summary-card .card-icon {
+    font-size: 28px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .summary-card .card-content h4 {
+    font-size: 18px;
+  }
+
+  .summary-card .card-content h6 {
+    font-size: 12px;
+  }
+
+  .chart-card h5 {
+    font-size: 16px;
+  }
+}
