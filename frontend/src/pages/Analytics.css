@@ -265,4 +265,62 @@
   .chart-card h5 {
     font-size: 16px;
   }
+  /* AI Section */
+.ai-section {
+  margin-bottom: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-header h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.section-header p {
+  margin: 0;
+  color: #666;
+  font-size: 16px;
+}
+
+/* Charts Section */
+.charts-section {
+  margin-top: 40px;
+}
+
+.section-title {
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: 600;
+  font-size: 24px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #667eea;
+}
+
+@media (max-width: 768px) {
+  .ai-section {
+    padding: 20px;
+  }
+
+  .section-header h3 {
+    font-size: 24px;
+  }
+
+  .section-header p {
+    font-size: 14px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+}
 }

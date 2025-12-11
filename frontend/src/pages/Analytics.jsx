@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../components/Sidebar';
+import AIInsights from '../components/AIInsights';
 import Loader from '../components/Loader';
 import { useAuth } from '../context/AuthContext';
 import api from '../service/api';
@@ -17,7 +18,7 @@ import {
   Tooltip,
   Legend
 } from 'chart.js';
-import { Pie, Bar, Line } from 'react-chartjs-2';
+import { Pie, Line } from 'react-chartjs-2';
 import './Analytics.css';
 
 ChartJS.register(
@@ -348,68 +349,80 @@ const Analytics = () => {
             </div>
           </div>
 
-          {/* Charts Section */}
-          <div className="row">
-            {/* Financial Overview Pie Chart */}
-            <div className="col-lg-6 mb-4">
-              <div className="chart-card">
-                <h5>Financial Overview</h5>
-                <div className="chart-container">
-                  <Pie data={financialOverviewData} options={chartOptions} />
-                </div>
-              </div>
+          {/* AI INSIGHTS SECTION - ADD THIS */}
+          <div className="ai-section">
+            <div className="section-header">
+              <h3>🤖 AI-Powered Insights</h3>
+              <p>Get personalized financial advice powered by artificial intelligence</p>
             </div>
+            <AIInsights month={selectedMonth} year={selectedYear} />
+          </div>
 
-            {/* Budget vs Expense */}
-            {analytics?.budget > 0 && (
+          {/* Charts Section */}
+          <div className="charts-section">
+            <h3 className="section-title">Financial Charts</h3>
+            <div className="row">
+              {/* Financial Overview Pie Chart */}
               <div className="col-lg-6 mb-4">
                 <div className="chart-card">
-                  <h5>Budget Status</h5>
+                  <h5>Financial Overview</h5>
                   <div className="chart-container">
-                    <Pie data={budgetData} options={chartOptions} />
-                  </div>
-                  <div className="budget-details">
-                    <p>Budget: {formatAmount(analytics?.budget, user?.currency || 'USD')}</p>
-                    <p>Spent: {formatAmount(analytics?.totalExpense, user?.currency || 'USD')}</p>
-                    <p className={analytics?.budgetRemaining < 0 ? 'text-danger' : 'text-success'}>
-                      {analytics?.budgetRemaining < 0 ? 'Over Budget: ' : 'Remaining: '}
-                      {formatAmount(Math.abs(analytics?.budgetRemaining || 0), user?.currency || 'USD')}
-                    </p>
+                    <Pie data={financialOverviewData} options={chartOptions} />
                   </div>
                 </div>
               </div>
-            )}
 
-            {/* Income by Category */}
-            {Object.keys(analytics?.incomeByCategory || {}).length > 0 && (
-              <div className="col-lg-6 mb-4">
-                <div className="chart-card">
-                  <h5>Income by Category</h5>
-                  <div className="chart-container">
-                    <Pie data={incomeCategoryData} options={chartOptions} />
+              {/* Budget vs Expense */}
+              {analytics?.budget > 0 && (
+                <div className="col-lg-6 mb-4">
+                  <div className="chart-card">
+                    <h5>Budget Status</h5>
+                    <div className="chart-container">
+                      <Pie data={budgetData} options={chartOptions} />
+                    </div>
+                    <div className="budget-details">
+                      <p>Budget: {formatAmount(analytics?.budget, user?.currency || 'USD')}</p>
+                      <p>Spent: {formatAmount(analytics?.totalExpense, user?.currency || 'USD')}</p>
+                      <p className={analytics?.budgetRemaining < 0 ? 'text-danger' : 'text-success'}>
+                        {analytics?.budgetRemaining < 0 ? 'Over Budget: ' : 'Remaining: '}
+                        {formatAmount(Math.abs(analytics?.budgetRemaining || 0), user?.currency || 'USD')}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
+              )}
 
-            {/* Expense by Category */}
-            {Object.keys(analytics?.expenseByCategory || {}).length > 0 && (
-              <div className="col-lg-6 mb-4">
-                <div className="chart-card">
-                  <h5>Expenses by Category</h5>
-                  <div className="chart-container">
-                    <Pie data={expenseCategoryData} options={chartOptions} />
+              {/* Income by Category */}
+              {Object.keys(analytics?.incomeByCategory || {}).length > 0 && (
+                <div className="col-lg-6 mb-4">
+                  <div className="chart-card">
+                    <h5>Income by Category</h5>
+                    <div className="chart-container">
+                      <Pie data={incomeCategoryData} options={chartOptions} />
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
+              )}
 
-            {/* Monthly Trend */}
-            <div className="col-12 mb-4">
-              <div className="chart-card">
-                <h5>6-Month Trend</h5>
-                <div className="chart-container-large">
-                  <Line data={monthlyTrendData} options={lineChartOptions} />
+              {/* Expense by Category */}
+              {Object.keys(analytics?.expenseByCategory || {}).length > 0 && (
+                <div className="col-lg-6 mb-4">
+                  <div className="chart-card">
+                    <h5>Expenses by Category</h5>
+                    <div className="chart-container">
+                      <Pie data={expenseCategoryData} options={chartOptions} />
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Monthly Trend */}
+              <div className="col-12 mb-4">
+                <div className="chart-card">
+                  <h5>6-Month Trend</h5>
+                  <div className="chart-container-large">
+                    <Line data={monthlyTrendData} options={lineChartOptions} />
+                  </div>
                 </div>
               </div>
             </div>
