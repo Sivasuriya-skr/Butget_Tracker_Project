@@ -14,14 +14,15 @@
       "name": "app.upload",
       "type": "com.budget.backend.config.AppConfig$Upload",
       "sourceType": "com.budget.backend.config.AppConfig",
-      "sourceMethod": "public com.budget.backend.config.AppConfig.Upload getUpload() "
+      "sourceMethod": "getUpload()"
     }
   ],
   "properties": [
     {
       "name": "app.jwt.expiration",
       "type": "java.lang.Long",
-      "sourceType": "com.budget.backend.config.JwtConfig"
+      "sourceType": "com.budget.backend.config.JwtConfig",
+      "defaultValue": 0
     },
     {
       "name": "app.jwt.secret",
@@ -31,7 +32,8 @@
     {
       "name": "app.upload.dir",
       "type": "java.lang.String",
-      "sourceType": "com.budget.backend.config.AppConfig$Upload"
+      "sourceType": "com.budget.backend.config.AppConfig$Upload",
+      "defaultValue": "uploads"
     }
   ],
   "hints": []

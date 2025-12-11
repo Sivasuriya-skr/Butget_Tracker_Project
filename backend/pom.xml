@@ -105,6 +105,40 @@
     <artifactId>poi-ooxml</artifactId>
     <version>5.2.3</version>
 </dependency>
+<!-- Add these dependencies inside <dependencies> section in pom.xml -->
+
+<!-- OpenAI Java SDK -->
+<dependency>
+    <groupId>com.theokanning.openai-gpt3-java</groupId>
+    <artifactId>service</artifactId>
+    <version>0.18.2</version>
+</dependency>
+
+<!-- OkHttp (required for OpenAI SDK) -->
+<dependency>
+    <groupId>com.squareup.okhttp3</groupId>
+    <artifactId>okhttp</artifactId>
+    <version>4.12.0</version>
+</dependency>
+<!-- Add these dependencies inside <dependencies> section -->
+
+<!-- Spring WebFlux for WebClient -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-webflux</artifactId>
+</dependency>
+
+<!-- Reactor Core (for Mono and Flux) -->
+<dependency>
+    <groupId>io.projectreactor</groupId>
+    <artifactId>reactor-core</artifactId>
+</dependency>
+
+<!-- Netty (WebClient requires this) -->
+<dependency>
+    <groupId>io.projectreactor.netty</groupId>
+    <artifactId>reactor-netty</artifactId>
+</dependency>
     </dependencies>
     
     <build>
